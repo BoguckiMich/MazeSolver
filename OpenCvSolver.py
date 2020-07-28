@@ -24,12 +24,9 @@ cv2.imshow('Contours1', drawnContours)
 drawnContours = cv2.drawContours(drawnContours, contours, 1, (0,0,0), 5)
 cv2.imshow('Contours2', drawnContours)
 
-ret, threshold = cv2.threshold(drawnContours, 240, 255, cv2.THRESH_BINARY)
-cv2.imshow('Threshold2', threshold)
-
 # we are creating buffer from contours
-contourBuffer = np.ones((15,15), np.uint8)
-contourBufferRes = cv2.dilate(threshold, contourBuffer, iterations=1)
+contourBuffer = np.ones((19,19))
+contourBufferRes = cv2.dilate(drawnContours, contourBuffer, iterations=1)
 cv2.imshow('Buffer', contourBufferRes)
 
 # by eroding we are creating same alement but smaller so we could later cut the line to the end
