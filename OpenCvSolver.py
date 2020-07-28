@@ -1,0 +1,46 @@
+import cv2
+import numpy as np
+
+filename = "maze_01"
+img = cv2.imread('./mazes/'+filename+'.png')
+cv2.imshow('Maze', img)
+
+# to apply thresholding we need to convert picture to grayscale
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+cv2.imshow('Gray maze', gray)
+
+# thresholding allows us to see where the pixel is different from white background, and inverting the colors
+ret, threshold = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY_INV)
+
+# saving to file
+cv2.imshow('Threshold 1', threshold)
+
+# we are looking for contours from entry point to exit point
+contours, hierarchy = cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+drawnContours = cv2.drawContours(threshold, contours, 0, (255, 255, 255), 5)
+cv2.imshow('Contours1', drawnContours)
+
+# we are cleaning maze from unwanted contours
+drawnContours = cv2.drawContours(drawnContours, contours, 1, (0,0,0), 5)
+cv2.imshow('Contours2', drawnContours)
+
+ret, threshold = cv2.threshold(drawnContours, 240, 255, cv2.THRESH_BINARY)
+cv2.imshow('Threshold2', threshold)
+
+# we are creating buffer from contours
+contourBuffer = np.ones((15,15), np.uint8)
+contourBufferRes = cv2.dilate(threshold, contourBuffer, iterations=1)
+cv2.imshow('Buffer', contourBufferRes)
+
+# by eroding we are creating same alement but smaller so we could later cut the line to the end
+thinBufferRes = cv2.erode(contourBufferRes, contourBuffer, iterations=1)
+cv2.imshow('Thin buffer', thinBufferRes)
+
+# difference of two similar elements
+difference = cv2.absdiff(contourBufferRes, thinBufferRes)
+cv2.imshow('Absolute difference', difference)
+
+#TODO find a way to draw it on picture
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
