@@ -15,11 +15,12 @@ Idea to solve mazes with two different approaches. First one is about working wi
 
 # How to run?
 
-These are example of simple apps, just run ```python name_of_the_app.py ```
+These are example of simple apps, just run ```python name_of_the_app.py ``` in bash or cmd.
 
 # What can be improved?
 
 My experience
+
 Improve or implement algorithms to second version of app
 
 ### Author
