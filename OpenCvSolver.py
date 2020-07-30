@@ -41,8 +41,6 @@ def main(options):
 
     #TODO find a way to draw it on picture
 
-
-
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
