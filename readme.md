@@ -21,7 +21,7 @@ Idea to solve mazes with two different approaches. First one is about working wi
     - after finish you should receive file: <code>name_of_the_file_solution.png</code> - **_work in progress_**
     
 2. **RecursionSolver** - run ```python RecursionSolver.py -th name_of_the_file.extension``` to create solution
-    - <code>-th</code> parameter is to set thickness of the walls, because this solution base on white spaces between walls
+    - <code>-th</code> parameter is to set thickness of the walls,*it is not required*, because this solution base on white spaces between walls
     - you will receive many pictures from steps I did to get solution - to close them just press any key
     - on this step you can verify is the thickness is to low of to big - default value is set to 4. Max value I used was 
     8 in some examples, and min value was 3 for bigger mazes.
