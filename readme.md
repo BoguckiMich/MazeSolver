@@ -22,6 +22,7 @@ Idea to solve mazes with two different approaches. First one is about working wi
     
 2. **RecursionSolver** - run ```python RecursionSolver.py -th name_of_the_file.extension``` to create solution
     - <code>-th</code> parameter is to set thickness of the walls,*it is not required*, because this solution base on white spaces between walls
+        if there is too much white space between wals, probably will get *MemoryError:stack overflow*
     - you will receive many pictures from steps I did to get solution - to close them just press any key
     - on this step you can verify is the thickness is to low of to big - default value is set to 4. Max value I used was 
     8 in some examples, and min value was 3 for bigger mazes.
