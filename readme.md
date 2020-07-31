@@ -18,7 +18,7 @@ Idea to solve mazes with two different approaches. First one is about working wi
 
 1. **OpenCvSolver** -  run ```python OpenCvSolver.py name_of_the_file.extension``` to create solution
     - you will receive many pictures from steps I did to get solution - to close them just press any key
-    - after finish you should receive file: <code>name_of_the_file_solution.png</code> in the direction of maze picture
+    - after finish you should receive file: <code>name_of_the_file_solution.png</code> in the folder directory of maze picture
     
 2. **RecursionSolver** - run ```python RecursionSolver.py -th name_of_the_file.extension``` to create solution
     - <code>-th</code> parameter is to set thickness of the walls,*it is not required*, because this solution base on white spaces between walls
