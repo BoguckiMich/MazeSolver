@@ -1,5 +1,6 @@
-import cv2, sys, argparse
+import cv2, sys, argparse, os
 import numpy as np
+import PIL as Image
 
 
 def main(options):
@@ -27,7 +28,7 @@ def main(options):
     cv2.imshow('Contours2', drawnContours)
 
     # we are creating buffer from contours
-    contourBuffer = np.ones((19,19), np.uint8)
+    contourBuffer = np.ones((10,10), np.uint8)
     contourBufferRes = cv2.dilate(drawnContours, contourBuffer, iterations=1)
     cv2.imshow('Buffer', contourBufferRes)
 
@@ -39,7 +40,12 @@ def main(options):
     difference = cv2.absdiff(contourBufferRes, thinBufferRes)
     cv2.imshow('Absolute difference', difference)
 
-    #TODO find a way to draw it on picture
+    ret, mask = cv2.threshold(difference, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
+    img[mask == 255] = [0, 0, 255]
+
+    cv2.imshow('Solution', img)
+    basename = os.path.splitext(options.filename)[0]
+    cv2.imwrite(basename + '_solution' + '.png', img)
 
     cv2.waitKey(0)
     cv2.destroyAllWindows()
