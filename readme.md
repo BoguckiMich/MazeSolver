@@ -4,7 +4,7 @@ Idea to solve mazes with two different approaches. First one is about working wi
 
 # What you can find in here?
 
-1. OpenCvSolver - based on `OpenCV` library to create one path based only on picture. - **_Still working_**
+1. OpenCvSolver - based on `OpenCV` library to create one path based only on picture.
 2. RecursionSolver - based on recursive function
 
 # What do you need?
@@ -18,7 +18,7 @@ Idea to solve mazes with two different approaches. First one is about working wi
 
 1. **OpenCvSolver** -  run ```python OpenCvSolver.py name_of_the_file.extension``` to create solution
     - you will receive many pictures from steps I did to get solution - to close them just press any key
-    - after finish you should receive file: <code>name_of_the_file_solution.png</code> - **_work in progress_**
+    - after finish you should receive file: <code>name_of_the_file_solution.png</code> in the direction of maze picture
     
 2. **RecursionSolver** - run ```python RecursionSolver.py -th name_of_the_file.extension``` to create solution
     - <code>-th</code> parameter is to set thickness of the walls,*it is not required*, because this solution base on white spaces between walls
@@ -34,8 +34,6 @@ Idea to solve mazes with two different approaches. First one is about working wi
 **My experience**
 
 Improve or implement algorithms to second version of app
-
-Solution to the first app
 
 Backtracking in second app
 
