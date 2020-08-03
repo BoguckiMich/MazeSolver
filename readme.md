@@ -9,10 +9,12 @@ Idea to solve mazes with two different approaches. First one is about working wi
 
 # What do you need?
 
-- Python 3+
-- OpenCV for Python
-- Numpy
-- Pillow
+- Python (version 3.6+)
+- OpenCV for Python (version 4.2+)
+- Numpy (version 1.19+)
+- Pillow (version 7.2)
+
+To install these dependencies use ```pip install name_of_dependency``` for example ```pip install OpenCv-python```.
 
 # How to run?
 
@@ -33,9 +35,12 @@ Idea to solve mazes with two different approaches. First one is about working wi
 
 **My experience**
 
-Improve or implement algorithms to second version of app
+*Improve or implement algorithms to second version of app* - There are algorithims to solve maze faster. But I dont know much about them.
+Examples are: Dijkstra's algorithm, BFS algorithm, Flood fill algorithm
 
-Backtracking in second app
+*Backtracking in second app* - Because of very big amount of operation done in recursion, I should upgrade 
+this function by **marking** the places where during the recursion, there is more than one corridor to take turn,
+and after reaching wall, go back to latest marked point instead of checking every one on the way back.
 
 ***
 
